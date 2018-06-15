@@ -90,4 +90,39 @@ def quick_sort(array, from=0, to=nil)
   quick_sort(array, free + 1, to)
 end
 
+def merge_sorted_arrays(arr1, arr2)
+  index1 = 0
+  index2 = 0
+  result = []
+
+  while index1 < arr1.length && index2 < arr2.length
+    if arr1[index1] <= arr2[index2]
+      result << arr1[index1]
+      index1 += 1
+    elsif arr2[index2] < arr1[index1]
+      result << arr2[index2]
+      index2 +=1
+    end
+  end
+
+  while index1 < arr1.length
+    result << arr1[index1]
+    index1 += 1
+  end
+
+  while index2 < arr2.length
+    result << arr1[index2]
+    index2 += 1
+  end
+
+  return result
+end
+
+
+arr1 = [1,3,5,7,9]
+arr2 = [2,4,6,8]
+
+puts 'Merge sorted arrays'
+puts merge_sorted_arrays(arr1, arr2).join(' ')
+
 
