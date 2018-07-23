@@ -49,7 +49,6 @@ def calculate_subsets(set, index)
     allSubsets.add(Set.new)
   else
     allSubsets = calculate_subsets(set, index + 1)
-    :q!
   end
 end
 
